@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="前端笔记04"><meta name="keywords" content="web,html,css"><meta name="author" content="汤同学,undefined"><meta name="copyright" content="汤同学"><title>前端笔记04【汤家】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/moai.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  gitment: ,
+  valine: ,
+}</script><meta name="generator" content="Hexo 5.2.0"></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/images/avatar.png"></div><div class="author-info-name">汤同学</div><div class="author-info-description">努力有用的话，那要天才干什么！</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/mengfei-tang" target="_blank">GitHub<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="mailto:18203703831@163.com" target="_blank">E-Mail<i class="icon-dot bg-color6"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2919766866&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color3"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">5</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">4</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">2</span></a></div><div class="friend-link"><a class="friend-link-text" href="https://www.w3cschool.cn/" target="_blank">W3Cschool</a><a class="friend-link-text" href="https://www.w3school.com.cn/" target="_blank">W3school</a><a class="friend-link-text" href="https://www.runoob.com/" target="_blank">菜鸟</a><a class="friend-link-text" href="https://fishc.com.cn/" target="_blank">鱼C</a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="title-name" href="/">汤家</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">前端笔记04</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-10-16 | 更新于 2020-10-16</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/web%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">web开发学习笔记</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/web/">web</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/html/">html</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/css/">css</a></div></div></div><div class="main-content"><p><strong>1.什么是浮动？</strong><br>    浮动就是让块级标签不独占一行。目的（使用场景）：把块级标签元素可以排在一行上。</p>
+<p><strong>2.浮动的原理</strong><br>    就是让元素脱离文档流，不占用标准流。</p>
+<p><strong>3.float的属性值：</strong><br>    left:左浮动<br>    right:右浮动<br>    none:默认值，不浮动</p>
+<p><strong>4.浮动后，后面的元素不管是块级还是行级元素，不会显示在下一行。</strong><br><strong>5.清除浮动</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">目的：让后面的元素自动掉到下一行。</span><br><span class="line">方法：</span><br><span class="line">   1）添加空标签，并设置样式：clear:both;</span><br><span class="line">       clear:left;  清除左浮动</span><br><span class="line">       clear:right; 清除右浮动</span><br><span class="line">       clear:both;  清除左右浮动</span><br><span class="line">       clear:none;  左右浮动都不清除</span><br><span class="line">   2）在要清除浮动的父级添加样式：overflow:hidden;</span><br><span class="line">       overflow:hidden;  超出部分隐藏，也可以用来实现清除浮动。</span><br><span class="line">   3）在要清除浮动的父级添加伪元素，并设定样式：</span><br><span class="line">       父元素:after&#123;</span><br><span class="line">           content:&quot;&quot;;</span><br><span class="line">           display: block;</span><br><span class="line">           clear:both;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>注意：在实际项目开发中，我们一般首先第2种方案。</code></pre>
+<p><strong>6.CSS盒子模型</strong><br>    每个元素都是一个盒子，一个盒子由margin（外边距），border（边框线）,padding（内边距）和content（内容）组成。<br>    IE的盒子中的content又由padding和content组成。</p>
+<pre><code>区别外边距和内边距是以边框为参照。
+
+系统默认外边距为8px。
+1）外边距(margin)：指元素边框线之外的距离。
+    margin-left:左边距
+    margin-right:右边距
+    margin-top:上边距
+    margin-bottom:下边距
+    margin:可用来设置任意一个边的边距，可以带1至4个参数。
+        1个(apx)：表示上下左右都有这样的外边距apx
+        2个(apx bpx)：表示上下外边距为apx，左右外边距为bpx
+        3个(apx bpx cpx)：表示上外边距为apx，下外边距为cpx，左右外边距为bpx
+        4个(apx bpx cpx dpx)：表示上为apx,右为bpx,下为cpx,左为dpx
+2）内边距（padding）：指元素的文本内容与边框之间的距离。
+    它的用法与margin完全一样。
+3）边框(border)
+    border-width:边框线宽度
+    border-style:边框线样式
+    border-color:边框线颜色
+
+    复合写法（简写）：
+        border:border-width border-style border-color;
+        注意：border-width border-style border-color这三个参数没有位置之分。</code></pre>
+<p><strong>7.盒子的真实尺寸</strong><br>    盒子宽度 = width + padding左右 + border左右<br>    盒子高度 = height + padding上下 + border上下</p>
+<p><strong>8.display属性：用来设置元素的显示方式。</strong><br>    属性值：<br>        none:不显示元素<br>        block:块显示，在元素前后设置换行符。目的：将行级标签转换为块级标签（因为行级标签不识别宽高，而块级标签识别，转换后，行级标签也可以设置宽高了）<br>        inline:行内显示，将块级标签转换为行级标签。<br>        inline-block;将块级或行级标签转换为行内块级标签。</p>
+<p><strong>9.table样式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">table一般不用来布局，主要用来格式化数据。</span><br><span class="line">属性：</span><br><span class="line">    width:宽度</span><br><span class="line">    height:高度</span><br><span class="line">    border-collapse:collapse; 单线边框</span><br><span class="line">    border:边框线</span><br><span class="line">td,tr属性：</span><br><span class="line">    width:宽度</span><br><span class="line">    height:高度</span><br><span class="line">    border:边框线</span><br><span class="line">    text-align:文本左右对齐(left(默认)&#x2F;center&#x2F;right)</span><br><span class="line">    vertical-align:文本垂直对齐(top&#x2F;middle(默认)&#x2F;bottom)</span><br></pre></td></tr></table></figure>
+
+<p><strong>10.列表样式</strong><br>    不是描述性的文本的任何内容都可以认为是列表。比如：菜单、商品列表等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1）列表类型</span><br><span class="line">    无序(ul)、有序(ol)和自定义列表(dl)。</span><br><span class="line">    ul和ol的列表项都是用li表示的，而dl是由一个dt和一个或多个dd组成的。</span><br><span class="line">    dl一般用来设定一个定义，比如名词解释等。dt：标题,dd：描述，用来对dt的内容进行解释并说明的。</span><br><span class="line">2）样式(用来修改标识类型)</span><br><span class="line">    list-style-image:用图像表示标识</span><br><span class="line">    list-style-position:标识的位置(inside&#x2F;outside(默认))</span><br><span class="line">    list-style-type:标识类型</span><br></pre></td></tr></table></figure>
+
+<pre><code>    简写：
+        list-style:list-style-image list-style-position list-style-type;
+        list-style的值可以按任意顺序列出，而且可以任意省略，只要提供一个值，其它的都自动默认。
+
+    list-style-type的属性值：
+        a)无序
+            disc(默认)/circle/square
+        b)有序
+            decimal(默认)/decimal-leading-zero/lower-roman/upper-roman/lower-alpha/upper-alpha/
+            lower-greek/lower-latin/upper-latin...
+        有序和无序：
+            none</code></pre>
+<p><strong>11.轮播图</strong><br>    作用：主要用于产品或公司相关宣传。<br>    组成：<br>        1）轮播的组图（至少两张以上，不能太多）<br>        2）控制器<br>        3）计数器</p>
+<p>​    position: relative(相对定位：设置为相对定位的元素框会偏移某个距离。元素仍然保持其未定位前的形状，它原本所占的空间仍保留)</p>
+<p>​    position: absolute(绝对定位：设置为绝对定位的元素框从文档流完全删除，并相对于其包含块定位，包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像该元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。)</p>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined">汤同学</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/10/16/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B004/">http://example.com/2020/10/16/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B004/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com">汤家</a>！</span></div></div></article><div id="pagination"><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/10/12/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B003/"><span>前端笔记03</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2020 By 汤同学</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
