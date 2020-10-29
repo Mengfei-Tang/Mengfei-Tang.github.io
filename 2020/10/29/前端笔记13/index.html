@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="前端笔记13"><meta name="keywords" content="javascript,web"><meta name="author" content="汤同学,undefined"><meta name="copyright" content="汤同学"><title>前端笔记13【汤家】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/moai.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  gitment: ,
+  valine: ,
+}</script><meta name="generator" content="Hexo 5.2.0"></head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/images/avatar.png"></div><div class="author-info-name">汤同学</div><div class="author-info-description">努力有用的话，那要天才干什么！</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/mengfei-tang" target="_blank">GitHub<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="mailto:18203703831@163.com" target="_blank">E-Mail<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2919766866&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color2"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">14</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">7</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">2</span></a></div><div class="friend-link"><a class="friend-link-text" href="https://www.w3cschool.cn/" target="_blank">W3Cschool</a><a class="friend-link-text" href="https://www.w3school.com.cn/" target="_blank">W3school</a><a class="friend-link-text" href="https://www.runoob.com/" target="_blank">菜鸟</a><a class="friend-link-text" href="https://fishc.com.cn/" target="_blank">鱼C</a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="title-name" href="/">汤家</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">前端笔记13</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-10-29 | 更新于 2020-10-29</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/web%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">web开发学习笔记</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/javascript/">javascript</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/web/">web</a></div></div></div><div class="main-content"><p><strong>1.JS是运行在客户端的一种解释型编程语言，它是一种弱类型的语言。</strong><br><strong>2.JS的作用：</strong><br>    用来完成前后端交互、增加用户体验的一些逻辑实现。<br><strong>3.一个网页是三部分组成：</strong>结构（HTML/HTML5）、表现（CSS/CSS3）和行为（JavaScript）。<br><strong>4.前端开发的核心是：JavaScript。</strong><br><strong>5.JavaScript的组成：</strong><br>    1）ECMAScript（标准：ECMA-262）：基础语言部分（基础、面向对象等）<br>    2）DOM（标准：W3C）：节点操作<br>    3）BOM（无标准）：浏览器操作<br><strong>6.JS的特点</strong><br>    1）松散性<br>        JS中的变量没有一个明确的类型，也叫弱类型的语言（允许将一块内存看作多种类型）。<br>    2）对象属性<br>        对象的属性也可以映射为任意的数据。<a id="more"></a><br>    3）继承机制<br>        JS是基于原型继承的。<br><strong>7.使用Javascript</strong></p>
+<pre><code>1）使用script标签（只能被当前HTML文件使用）
+
+     &lt;script type=&quot;text/javascript&quot; defer=&quot;defer&quot; charset=&quot;utf-8&quot;&gt;
+          alert(&#39;这是我的第一个JS程序&#39;);// alert表示弹出一个警告框
+     &lt;/script&gt;
+
+    defer:表示所有DOM元素加载完成后，再执行JS代码（现在开发一般不需要）
+    charset：字符编码（主要解决汉字乱码问题）（现在开发一般不需要）
+
+    注意：
+        a.script标签可以写在网页代码中的任意的地方，因为JS是同步执行的，但为了避免JS阻塞和影响操作DOM，最好写在body后。
+        b.如果要输出script结束标签时，必须拆开写：
+            alert(&#39;&lt;/sc&#39;+&#39;ript&gt;&#39;);
+
+2）在a标签的href中写JS代码（实际开发中不建议这种使用，因为会影响到性能）
+    &lt;a href=&quot;javascript:alert(&#39;大家好！&#39;)&quot;&gt;大家好&lt;/a&gt;
+    &lt;a href=&quot;javascript:var a=10,b=20;alert(&#39;结果为：&#39;+(a+b))&quot;&gt;计算结果&lt;/a&gt;
+    &lt;a href=&quot;javascript:close();&quot;&gt;&amp;times;&lt;/a&gt;
+    &lt;a href=&quot;javascript:void(1);&quot;&gt;test&lt;/a&gt;
+3）用script标签引入外部JS文件（可以被多个HTML文件使用）
+    &lt;script src=&quot;01_test.js&quot; type=&quot;text/javascript&quot; async=&quot;async&quot;&gt;&lt;/script&gt;
+
+    说明：
+        src:引入的外部JS文件的路径和文件名（只能用于引入JS文件）
+        async:异步加载JS代码（在加载DOM元素的同时可以运行JS代码，只用于外部JS代码）</code></pre>
+<p><strong>8.标识符</strong><br>  所谓标识符，就是指变量、函数、属性的名字，或者函数的参数。<br>    标识符定义规则：<br>      1）第一字符必须是字母、下划线（_）或一个美元符号（$）。<br>      2）其他字符可以是字母、下划线、美元符号或数字。<br>      3）不能把关键字、保留字、true、false和null作为标识符。</p>
+<pre><code>  关键字：
+    break、else、new、var、case、finally 、return 、void、catch、for、switch、while、continue、
+    function、this、with、default、if、throw、delete、in、try、do、instanceof、typeof等
+  保留字：
+    abstract、enum、int、short、boolean、export、interface、static、byte、extends、long、
+    super、char、final、native、synchronized、class、float、package、throws、const、goto、
+    private、transient、debugger、implements、protected、volatile、double、import、public等
+
+注意：
+    在JS中任意地方是严格区别字母大小写的！！！</code></pre>
+<p><strong>9.注释</strong><br>    1）单行注释<br>        // 注释内容     一般用于对当前行的代码进行说明（一般写在代码后面）  （在WebStorm中的快捷键是Ctrl+/）<br>    2）多行注释 （在WebStorm中的快捷键是Ctrl+Shift+/）<br>        /*<br>            注释内容<br>            注释内容<br>            ……<br>        */              也叫作块注释。一般对下面的代码进行整体说明，且说明内容可能较多。</p>
+<pre><code>说明：
+    1）注释语句在浏览器中不会被解析执行，仅起说明作用；
+    2）在项目中，要习惯去写注释，主要便于后期的项目维护。</code></pre>
+<p><strong>10.常量</strong><br>    常量也叫直接量或字面量，在程序中直接给出具体的数据。<br>    常量是不可以改变的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如：100，true，&#39;abc&#39;,null,undefined等</span><br></pre></td></tr></table></figure>
+
+<p><strong>11.变量</strong><br>    变量就是在内存中开辟一段空间用于存放某个数据。<br>    变量必须要有变量名，变量名必须遵循标识符的命名规范。</p>
+<pre><code>定义：
+    1）只定义变量
+        var x;
+        var a, b, c;
+    2）定义变量且赋值
+        var x1 = true;
+        var y1 = 100, y2 = null;
+
+    说明：
+        1）定义变量时不需要给出数据的类型（松散式语言特点）。
+        2）变量可以重复定义，后面会覆盖前面变量。
+        3）不用var定义变量也可以，默认是为window对象添加了属性。
+            name = &#39;张三&#39;; // 相当于 window.name = &#39;张三&#39;;
+        4）定义的变量如果没有赋值，系统将自动赋默认值为&#39;undefined&#39;。
+        5）一条语句可以以分号结束，也可以不加分号；如果是多条语句写在同一行上，必须用分号隔开。
+        6）在书写代码时，除了字符串中可以使用中文标点之外，其它任何地方只能用英文标点符号。</code></pre>
+<p><strong>12.数据类型</strong><br>    数据类型指的是在内存存储的方式。<br>    分为：</p>
+<pre><code>    1）基本数据类型
+        number：数值型
+          用来表示一个数字，通常可用作进行加减乘除等运算。
+          分为整型和浮点型（小数位可以浮动）。
+          100（10进制）
+          0123（8进制）
+          0xae12（16进制）
+        isNaN()：用来判断是不是不是一个数。
+        string：字符型
+            用引号（单双引号都可以，它们没区别）引起来的一串字符（可以是数字、字母、标点符号、汉字等）,通常用作描述。
+            &#39;abc&#39;
+            &quot;abc&quot;
+            &quot;a\&#39;bc&quot;
+        boolean：布尔（逻辑）型
+            表示真（true）或假（false）。
+        null：空
+            表示一个空对象的地址指定指向的为空。
+        undefined：未定义
+            表示定义了一个变量，但如果没有给这个变量赋值，系统将自动赋值为undefined。
+    2）引用数据类型
+        object:对象型
+            用来声 明或存储一个对象（对象，函数、正则、字符、数值等）
+
+            var a = new Number(10);
+            var obj = &#123;
+                sno: &#39;007&#39;,
+                sname: &#39;张三&#39;
+            &#125;</code></pre>
+<p><strong>13.运算符</strong></p>
+<pre><code>1）算术运算符
+    + - * / %(求余/模) ++(自增) --(自减)
+2）字符串运算符
+    +：用于实现字符串连接。
+3）关系运算符
+   &gt; &lt; &gt;= &lt;= == === != !==
+   返回的结果只能是true或false。
+     比较方法：
+         a.数值比较，是比较其大小；
+         b.字符比较，是比较ASCII码值的大小；
+            0-&gt;48,A-&gt;65,a-&gt;97,回车-&gt;13,ESC-&gt;27
+         c.汉字比较，是比较其Unicode编码值的大小
+            可以通过charCodeAt()获取编码值。
+         d.==和!=只比较值，不比较类型；===和!==既比较值又比较类型
+
+            比较：部分符号&lt;数字&lt;大写字母&lt;小写字母&lt;汉字
+
+4）逻辑运算符
+    逻辑运算符有:!、&amp;&amp;和||三种。返回的值一般是逻辑值true或false，也可能返回其它值。
+    ！：逻辑非（取反）(单目/一元运算)
+        !true -&gt; false   !false -&gt; true
+    &amp;&amp;：逻辑与(双目/二元运算)
+        只要有一个操作数为false，结果为false。
+        注意：
+            如果两个中任意一个操作数非逻辑值，第一个操作数的结果为true时，返回第二个操作数的值；
+            第一个操作数的结果为false时，返回第一个操作数的值。
+    ||：逻辑或(双目/二元运算)
+        只要有一个操作数为true，结果为true。
+        注意：
+            如果两个中任意一个操作数非逻辑值，第一个操作数的结果为true时，返回第一个操作数的值；
+            第一个操作数的结果为false时，返回第二个操作数的值。
+
+    短路运算：
+        a.&amp;&amp;运算时，如果第一个操作数为false，不需要计算第二个操作数，结果返回false。
+        b.||运算时，如果第一个操作数为true，不需要计算第二个操作数，结果返回true。
+
+5）位运算符
+6）三目运算符（条件运算符）
+    语法：
+        表达式1 ? 表达式2 ：表达式3
+        如果表达式1成立，返回表达式2的结果；如果不成立，返回表达式3的结果。
+
+    Tips:
+        三目运算相当于if语句中的双分支结构。
+        如果表达式2或表达式3较为复杂，建议用if语句或switch语句实现。
+
+运算符优先级：
+    运算符                                    描述
+    . [] ()                                字段访问、数组下标、函数调用以及表达式分组
+    ++ -- - ~ ! delete new typeof void    一元运算符、返回数据类型、对象创建、未定义值
+    * / %                                乘法、除法、取模
+    + - +                                加法、减法、字符串连接
+    &lt;&lt; &gt;&gt; &gt;&gt;&gt;                            移位
+    &lt; &lt;= &gt; &gt;= instanceof                小于、小于等于、大于、大于等于、instanceof
+    == != === !==                        等于、不等于、严格相等、非严格相等
+    &amp;                                    按位与
+    ^                                    按位异或
+    |                                    按位或
+    &amp;&amp;                                    逻辑与
+    ||                                    逻辑或
+    ?:                                    条件（三目运算）
+    = += -= *= /= %=                    赋值、运算赋值
+    ,                                    多重求值</code></pre>
+<p>14.流程控制<br>    JS是一门既面向过程，也是面向对象的解释型语言。<br>    面向过程：按照代码书写的顺序依次执行（OOP）。<br>    JS也是一门结构性语言。<br>    JS的结构分为顺序结构、分支（条件/选择）结构和循环结构三种。<br>        顺序结构：按照代码的书写顺序依次执行，一般包含初始化、赋值、输入/输出等语句。<br>        条件结构：用if或switch语句实现，其中的代码是有条件选择执行的。<br>        循环结构：某部分代码在指定的条件范围内反复执行，用for/for…in/forEach/while/do…while语句实现。</p>
+<pre><code>1）条件结构
+    a.单分支
+        语法：
+            if(条件)语句;
+            或：
+            if(条件)&#123;
+               语句组;
+            &#125;
+        如果条件成立，将执行语句或语句组；条件不成立，执行if的下一条语句。
+
+    b.双分支
+        语法：
+            if(条件)语句1;else 语句2;
+            或：
+            if(条件)&#123;
+               语句组1;
+            &#125;else&#123;
+               语句组2;
+            &#125;
+        如果条件成立，将执行语句1或语句组1；条件不成立，将执行语句2或语句组2。
+
+        注意：else表示“否则”的意思，其后不能写条件。
+
+    c.多分支（三分支及以上的）
+        多分支实际上是单分支和双分支的嵌套。
+        语法：
+            if(条件1)&#123;
+                if(条件2)&#123;
+                   if(条件3)&#123;
+                     语句或语句组;
+                   &#125;
+                &#125;
+            &#125;
+
+            或：
+            if(条件1)&#123;
+               语句1或语句组1;
+            &#125;else&#123;
+               if(条件2)&#123;
+                  语句2或语句组2;
+               &#125;else&#123;
+                  语句3或语句组3;
+               &#125;
+            &#125;
+
+            或：
+            if(条件1)&#123;
+               if(条件2)&#123;
+                 语句1或语句组1;
+               &#125;
+            &#125;else&#123;
+               if(条件3)&#123;
+                  语句1或语句组2;
+               &#125;else&#123;
+                  语句1或语句组3;
+               &#125;
+            &#125;
+            或（简洁写法，推荐）：
+            if(条件1)&#123;
+                语句1或语句组1;
+            &#125;else if(条件2)&#123;
+                语句2或语句组2;
+            &#125;else if(条件3)&#123;
+                语句3或语句组3;
+            &#125;
+            ....
+            else&#123;
+                语句n或语句组n;
+            &#125;
+            如果条件1成立，将执行语句1或语句组1，后面的代码将不会被执行；
+            如果条件1不成立，将判断条件2，条件2成立，执行语句2或语句组2……
+            如果前面的条件都不满足时，将执行else后面的代码。
+
+    d.情况语句switch
+        语法：
+            switch(表达式)&#123;
+                case 表达式1: 语句1或语句组1;[break;]
+                case 表达式2: 语句2或语句组2;[break;]
+                case 表达式3: 语句3或语句组3;[break;]
+                ...
+                case 表达式n: 语句n或语句组n;[break;]
+                default:语句n+1或语句组n+1;
+            &#125;
+
+        说明：执行表达式，如果表达式的结果为case后面的某个对应的值，将执行后面所对应的语句或语句组，如果语句后有break，将终止该情况语句，
+            如果没有break，将不再判断条件，继续执行后面的语句，直到遇到break为止；如果条件都不满足，将自动执行default后的语句。
+
+        switch与if的区别：
+            switch一般用于能获取结果的简单条件的判断，而if一般用于较为复杂的条件判断；
+            if能实现的条件判断,switch不一定能实现，switch能实现的条件判断，if也一定能实现；
+            如果switch和if都能用的情况下，switch一般较简洁些。
+2）循环结构
+    I）循环
+        a.计数循环(for)
+            语法：
+                for([变量初始值];[条件];[步长])&#123;
+                    [循环体;]
+                    [continue;]
+                    [break;]
+                &#125;
+
+            说明：
+                先执行变量初始值，再判断条件，如果条件成立，再循环体，再计算步长，最后再判断条件，条件成立，继续执行循环体……，直到条件不成立，跳出循环为止。
+
+                该循环的次数是可以计算出来：
+                    循环次数=[（终值 - 初值） / 步长] + 1
+        b.当型循环(while)
+            语法：
+                while（条件）&#123;
+                    [循环体;]
+                    [continue;]
+                    [break;]
+                &#125;
+            说明：
+                当条件成立时，执行循环体，反之则跳出循环。
+        c.直到型循环(do...while)
+            语法：
+               do&#123;
+                    [循环体;]
+                    [continue;]
+                    [break;]
+                &#125; while（条件）
+            说明：
+                先执行循环体，再判断条件，如果条件成立，继续循环，反之则跳出循环。
+
+                直到型循环与当型循环的区别：
+                    当条件1次都不成立时，直到型循环至少会执行一次循环，而当型循环一次也不执行。
+        d.数组和对象遍历（后面再讲）
+            for...in
+            forEach()
+
+            小结：
+                for只能用于循环次数已知的情况；而while和do...while可以用在循环次数已知或未知的情况，
+            一般循环次数已知用for较多；for...in用于遍历数组和对象；forEach()用于遍历数组，for循环也可以遍历数组，但性能较差。
+    II）break和continue语句
+        break语句可以用在switch语句和循环语句中（forEach循环除外），表示跳出（结束）情况语句或循环。
+        continue语句只能用在循环语句（forEach循环除外）中，表示结束本次，继续下一次循环。
+
+        注意：
+            a)break和continue语句必须单独存在，后面不能添加其它代码。
+            b)break和continue语句一般放在if语句中。</code></pre>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined">汤同学</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/10/29/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B013/">http://example.com/2020/10/29/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B013/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com">汤家</a>！</span></div></div></article><div id="pagination"><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/10/28/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B012/"><span>前端笔记12</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2020 By 汤同学</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
