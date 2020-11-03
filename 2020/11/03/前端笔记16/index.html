@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>前端笔记16 | 汤家</title><meta name="keywords" content="javascript,web"><meta name="author" content="汤同学"><meta name="copyright" content="汤同学"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="1.JSON    JSON(JavaScript Object Notation：JS对象表示法）是一种轻量级的数据交换格式。用独立的编程语言的文本格式来存储和表示数据。 12345678910111213141516171819202122232425262728293031323334  1）优点      易于阅读和编写，同时也易于浏览器解析和生成，并有效地提升网络传输效率。  2）与XM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端笔记16">
+<meta property="og:url" content="http://example.com/2020/11/03/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B016/index.html">
+<meta property="og:site_name" content="汤家">
+<meta property="og:description" content="1.JSON    JSON(JavaScript Object Notation：JS对象表示法）是一种轻量级的数据交换格式。用独立的编程语言的文本格式来存储和表示数据。 12345678910111213141516171819202122232425262728293031323334  1）优点      易于阅读和编写，同时也易于浏览器解析和生成，并有效地提升网络传输效率。  2）与XM">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/cover.jpg">
+<meta property="article:published_time" content="2020-11-03T12:42:48.206Z">
+<meta property="article:modified_time" content="2020-11-03T12:42:48.325Z">
+<meta property="article:author" content="汤同学">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/cover.jpg"><link rel="shortcut icon" href="/img/moai.ico"><link rel="canonical" href="http://example.com/2020/11/03/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B016/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="yandex-verification" content="{&quot;theme_color&quot;:{&quot;enable&quot;:true,&quot;main&quot;:&quot;#49B1F5&quot;,&quot;paginator&quot;:&quot;#00c4b6&quot;,&quot;button_hover&quot;:&quot;#FF7242&quot;,&quot;text_selection&quot;:&quot;#00c4b6&quot;,&quot;link_color&quot;:&quot;#99a9bf&quot;,&quot;meta_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#49b1f5&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}}"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 汤同学","link":"链接: ","source":"来源: 汤家","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-11-03 20:42:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/cover.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">汤家</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">前端笔记16</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-03T12:42:48.206Z" title="发表于 2020-11-03 20:42:48">2020-11-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-03T12:42:48.325Z" title="更新于 2020-11-03 20:42:48">2020-11-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/web%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">web开发学习笔记</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>1.JSON</strong><br>    JSON(JavaScript Object Notation：JS对象表示法）是一种轻量级的数据交换格式。用独立的编程语言的文本格式来存储和表示数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">  1）优点</span><br><span class="line">      易于阅读和编写，同时也易于浏览器解析和生成，并有效地提升网络传输效率。</span><br><span class="line">  2）与XML比较</span><br><span class="line">      JSON书写或解析时是一个对象，更容易解析；而XML是由用户自定义标签来存储数据的，对于前端来说，不容易书写且解析起来比较困难。</span><br><span class="line">  3）JSON文件内容</span><br><span class="line">      它可以是一个单值，也可以是一个对象，也可以是一个数组，也可以是对象和数组的结合。</span><br><span class="line">  4）JSON写在哪里</span><br><span class="line">      可以写在JavaScript代码中，也可以形成一个独立的.json文本文件。</span><br><span class="line">      a.在JS中书写JSON数据</span><br><span class="line">          值如果是字符串，可以用单或双引号引起来，数值型数据和逻辑值以及null不能加引号；</span><br><span class="line">          如果是对象，键可以用单或双引号引起来，也可以不加引号。</span><br><span class="line">      b.独立的JSON文件</span><br><span class="line">          i)文件的扩展名必须是.json，JSON文件不是JS文件，不能出现任何的JS代码，它只是一个文本文件；</span><br><span class="line">          ii)数据不能赋给某个变量；</span><br><span class="line">          iii)键必须用双引号引起来；</span><br><span class="line">          iv)值如果是字符型数据，必须用双引号引起来，其它类型的数据不能用引号引；</span><br><span class="line">          v)在JSON文件中不能添加任何注释。</span><br><span class="line">  5）数据值可以有以下三种</span><br><span class="line">      ①简单值：可以在JSON中表示字符串、数值、布尔值和null。但JSON不支持JavaScript中的特殊undefined。</span><br><span class="line">      ②对象（&#123;&#125;）</span><br><span class="line">      ③数组（[]）</span><br><span class="line">  6）在实际开发中的数据处理</span><br><span class="line">      在实际项目开发中，如果后台工程师还没创建好后台数据接口时，前端工程师可以先做数据mock（模拟），写对应的HTML、CSS和JS代码，</span><br><span class="line">  等后台数据可以调用时，再进行替换即可。</span><br><span class="line">      在项目开发中，数据最好分离出来，形成单独的JSON文件。</span><br><span class="line">  7）解析JSON数据</span><br><span class="line">解析JSON数据的目的是为了将数据（动态）渲染到前端（浏览器）</span><br><span class="line">      a)JS中JSON</span><br><span class="line">          如果是JSON数据，可以直接访问；如果是JSON格式的字符串需要用JSON.parse()方法进行转换。</span><br><span class="line"></span><br><span class="line">          JSON.parse()：将JSON格式的字符串转换为JSON</span><br><span class="line">          JSON.stringify()：将JSON转换为JSON格式的字符串</span><br><span class="line">      b)解析JSON文件</span><br><span class="line">      	 JSON文件必须用ajax（异步请求）技术去获取。</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.ajax请求操作步骤：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1）创建请求对象</span><br><span class="line">  var xhr &#x3D; new XMLHttpRequest();</span><br><span class="line">2）建立请求连接</span><br><span class="line">  xhr.open(&#39;get&#39;,url,true);&#x2F;&#x2F; get&#x2F;post：请求方式 true&#x2F;false：true表示异步请求,false表同步操作 url：表示请求的路径</span><br><span class="line"> 3）向后台发送请求</span><br><span class="line">  xhr.send();</span><br><span class="line">4）前端对请求的结果进行处理</span><br><span class="line">  xhr.onreadystatechange &#x3D; function () &#123;</span><br><span class="line">    if(xhr.readyState &#x3D;&#x3D; 4 &amp;&amp; xhr.status &#x3D;&#x3D; 200)&#123; &#x2F;&#x2F; 如果请求成功</span><br><span class="line">      console.log(JSON.parse(xhr.responseText)); &#x2F;&#x2F; responseTextr：获取请求的结果</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+
+<pre><code>注意：如果发送ajax请求，必须以http（服务器端）的方式启动文件，不能在本地直接打开。</code></pre>
+<p><strong>3.DOM操作</strong><br>    DOM（Document Object Model:文档对象模型）：是HTML和XML文档的编程接口，定义了访问和操作HTML和XML文档的标准方法。<br>    DOM以树型目录结构表达HTML和XML文档的，每一个节点就是一个DOM元素。<br>        document-&gt;html-&gt;head/body-&gt;…<br>    1）DOM节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">a）节点层次</span><br><span class="line">    节点层次分为父子节点和同胞节点两种。</span><br><span class="line">        在节点树中，顶端节点被称为根（root）</span><br><span class="line">        每个节点都有父节点、除了根（它没有父节点）</span><br><span class="line">        一个节点可拥有任意数量的子节点</span><br><span class="line">        同胞节点是拥有相同父节点的节点，也叫兄弟节点</span><br><span class="line">b）DOM节点分类</span><br><span class="line">    元素节点：标签</span><br><span class="line">    属性节点：标签的属性</span><br><span class="line">    文本节点：标签后的换行符</span><br><span class="line">    文档节点：document</span><br><span class="line">c）DOM节点的名称（nodeName）</span><br><span class="line">    元素节点 标签名相同</span><br><span class="line">    属性节点 属性名相同</span><br><span class="line">    文本节点 #text</span><br><span class="line">    文档节点 #document</span><br><span class="line">d）DOM节点的值（nodeValue）</span><br><span class="line">    元素节点 undefined 或 null</span><br><span class="line">    属性节点 属性值</span><br><span class="line">    文本节点 文本内容</span><br><span class="line">e）DOM节点的类型（nodeType）</span><br><span class="line">    元素 1</span><br><span class="line">    属性 2</span><br><span class="line">    文本 3</span><br><span class="line">    注释 8</span><br><span class="line">    文档 9</span><br></pre></td></tr></table></figure>
+
+<p>​    2）节点操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">       a）获取节点</span><br><span class="line">           通过ID获取节点 【返回具体某个节点】</span><br><span class="line">               document.getElementById(ID名)</span><br><span class="line">           通过标签名获取节点 【返回节点数组，即使只有一个】</span><br><span class="line">               document.getElementsByTagName(标签名)</span><br><span class="line">           通过标签的name值获取节点 【返回节点数组】</span><br><span class="line">               document.getElementsByName(Name名)</span><br><span class="line">           通过class值来获取节点 【返回节点数组】</span><br><span class="line">               document.getElementsByClassName(Class名)</span><br><span class="line">getElementsByClassName这个方法在Internet Explorer 5,6,7,8 中无效</span><br><span class="line">           根据选择器返回找到结果集中的第一个</span><br><span class="line">               document.querySelect(&quot;选择器&quot;)</span><br><span class="line">           根据选择器返回找到的结果集，是个节点数组</span><br><span class="line">               document.querySelectAll(&quot;选择器&quot;)</span><br><span class="line">       b）创建DOM节点</span><br><span class="line">           i)创建元素节点</span><br><span class="line">               document.createElement(&#39;标签名&#39;);</span><br><span class="line">           ii)创建文本节点</span><br><span class="line">               document.createTextNode(&#39;文本内容&#39;);</span><br><span class="line">           iii)创建属性节点</span><br><span class="line">               document.createAttribute(&#39;属性名&#39;);</span><br><span class="line">               属性节点名.value &#x3D; &#39;属性值&#39;; &#x2F;&#x2F; 为属性设置值</span><br><span class="line"></span><br><span class="line">         &#x2F;&#x2F; 关联以上三个节点</span><br><span class="line">         元素节点名.appendChild(文本节点名); &#x2F;&#x2F; 在元素节点上添加文本节点</span><br><span class="line">         元素节点名.setAttributeNode(属性节点名); &#x2F;&#x2F; 在元素节点上添加属性节点</span><br><span class="line"></span><br><span class="line">         document.body.appendChild(元素节点名); &#x2F;&#x2F; 将创建的节点添加到文档中</span><br><span class="line"></span><br><span class="line">   简洁写法：</span><br><span class="line">       var oDiv &#x3D; document.createElement(&#39;div&#39;); &#x2F;&#x2F; 创建元素节点</span><br><span class="line">       oDiv.setAttribute(&#39;class&#39;,&#39;wrapper box&#39;); &#x2F;&#x2F; 为元素节点添加属性及属性值</span><br><span class="line">       oDiv.innerHTML &#x3D; &#39;创建DOM元素的简洁写法&#39;;  &#x2F;&#x2F; 为元素节点设置文本内容</span><br><span class="line">       document.body.appendChild(oDiv); &#x2F;&#x2F; 将创建的元素节点添加到文档中</span><br></pre></td></tr></table></figure>
+
+<p>3）插入节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i)插入内部的尾部</span><br><span class="line">    父节点.appendChild(创建的节点)</span><br><span class="line">ii)插入内部的某个前面</span><br><span class="line">    父节点.insertBefore(创建的节点,已知的子节点)</span><br></pre></td></tr></table></figure>
+
+<p>4）替换节点<br>    父节点.replaceChild(新节点，老节点)<br>5）克隆节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  深度克隆： 包含子节点一起克隆。</span><br><span class="line">  浅克隆： 只会将找到的这个节点克隆，子节点不会克隆</span><br><span class="line"></span><br><span class="line">​    需要被复制的节点. cloneNode(true&#x2F;false);</span><br><span class="line">​        true: 复制当前节点以及所有子节点（深度克隆）</span><br><span class="line">​        false: 仅复制当前节点（浅克隆）</span><br></pre></td></tr></table></figure>
+
+<p>6）删除节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">i)删除当前节点及子节点</span><br><span class="line">    节点.remove();</span><br><span class="line">ii)删除子节点</span><br><span class="line">    父节点.removeChild(子节点)</span><br></pre></td></tr></table></figure>
+
+<p>7）节点属性操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">i)获取属性值</span><br><span class="line">    DOM节点.属性名   &#x2F;&#x2F; 不能获取用户自定义属性的值</span><br><span class="line">    DOM节点.getAttribute(属性名)  &#x2F;&#x2F; 获取所有属性（用户自定义属性）的值</span><br><span class="line">ii)设置属性值</span><br><span class="line">    DOM节点.属性名 &#x3D; 属性值   &#x2F;&#x2F; 不能设置用户自定义属性的值</span><br><span class="line">    DOM节点.setAttribute(属性名, 属性值)  &#x2F;&#x2F; 设置所有属性（用户自定义属性）的值</span><br><span class="line">iii)删除属性值</span><br><span class="line">    DOM节点.属性名 &#x3D; &#39;&#39;   &#x2F;&#x2F; 不能删除用户自定义属性</span><br><span class="line">    DOM节点.removeAttribute(属性名)  &#x2F;&#x2F; 删除所有属性（用户自定义属性）</span><br></pre></td></tr></table></figure>
+
+<p>8）节点文本操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">i) 获取文本</span><br><span class="line">    节点.innerHTML &#x2F;&#x2F;获取节点下的所有内容包含了标签</span><br><span class="line">    节点.innerText &#x2F;&#x2F; 获取节点下的文本内容，会过滤掉标签</span><br><span class="line">    节点.value &#x2F;&#x2F; 获取input输入框等表单控件的内容</span><br><span class="line">    节点.getAttribute(“value”) &#x2F;&#x2F;value是表单输入框的属性，可以使用getAttribute获得value值</span><br><span class="line">ii)设置文本</span><br><span class="line">    节点.innerHTML&#x3D; &quot;文本内容&quot; &#x2F;&#x2F; 会翻译html标签</span><br><span class="line">    节点.innerText &#x3D; &quot;文本内容&quot; &#x2F;&#x2F; 不会翻译html标签</span><br><span class="line">    节点.value &#x3D; 值</span><br><span class="line">    节点.setAttribute(&quot;value&quot;,值) &#x2F;&#x2F; 因为value是属性，所以也可以中这个方法设置内容</span><br><span class="line">iii)删除文本</span><br><span class="line">    节点.innerHTML&#x3D; &quot;&quot;</span><br><span class="line">    节点.innerText &#x3D; &quot;&quot;</span><br><span class="line">    节点.value &#x3D; &quot;&quot;</span><br><span class="line">    节点.removeAttribute(&quot;value&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>9）DOM节点样式操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">a)操作样式class</span><br><span class="line">    i)获取class</span><br><span class="line">        节点.className 获取节点的所有class</span><br><span class="line">        节点.getAttribute(&quot;class&quot;) 获取节点的所有class</span><br><span class="line">    ii)设置class</span><br><span class="line">        节点.className &#x3D; 值</span><br><span class="line">        节点.setAttribute(&quot;class&quot;,值)</span><br><span class="line">    iii)其它方法</span><br><span class="line">        节点.classList.add(value); &#x2F;&#x2F;为元素添加指定的类</span><br><span class="line">        节点.classList.contains(value); &#x2F;&#x2F; 判断元素是否含有指定的类，如果存在返回true</span><br><span class="line">        节点.classList.remove(value); &#x2F;&#x2F; 删除指定的类</span><br><span class="line">        节点.classList.toggle(value); &#x2F;&#x2F; 有就删除，没有就添加指定类</span><br><span class="line">b)操作内联样式</span><br><span class="line">    i)获取内联样式</span><br><span class="line">        节点.style.样式属性名 &#x2F;&#x2F; 获取某个具体的内联样式</span><br><span class="line">        节点.style.cssText &#x2F;&#x2F; 获取某个节点的所有内联样式，返回字符串</span><br><span class="line">    ii)设置内联样式</span><br><span class="line">        节点.style.样式属性名 &#x3D; 属性值  &#x2F;&#x2F; 设置某个具体的内联样式</span><br><span class="line">        节点.style.cssText &#x3D; 属性值或属性值列表 &#x2F;&#x2F; 设置某个节点的所有内联样式</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.常用事件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">onload onclick ondblclick onmouseover onmouseout onmousemove onmousedown onmouseout onblur onfocus onsubmit onrest onchange</span><br><span class="line">onkeydown onkeyup onkeypress</span><br><span class="line">onresize</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">汤同学</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/11/03/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B016/">http://example.com/2020/11/03/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B016/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">汤家</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/javascript/">javascript</a><a class="post-meta__tags" href="/tags/web/">web</a></div><div class="post_share"><div class="social-share" data-image="/img/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/11/03/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B015/"><img class="next-cover" src="/img/cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">前端笔记15</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/10/10/JS实现随机验证码/" title="JavaScript生成验证码"><img class="cover" src="/img/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-10</div><div class="title">JavaScript生成验证码</div></div></a></div><div><a href="/2020/11/02/前端笔记14/" title="前端笔记14"><img class="cover" src="/img/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-02</div><div class="title">前端笔记14</div></div></a></div><div><a href="/2020/11/03/前端笔记15/" title="前端笔记15"><img class="cover" src="/img/cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-03</div><div class="title">前端笔记15</div></div></a></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">汤同学</div><div class="author-info__description">长路漫漫，Bug作伴</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/mengfei-tang"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/mengfei-tang" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/11/03/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B016/" title="前端笔记16"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端笔记16"/></a><div class="content"><a class="title" href="/2020/11/03/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B016/" title="前端笔记16">前端笔记16</a><time datetime="2020-11-03T12:42:48.206Z" title="发表于 2020-11-03 20:42:48">2020-11-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/03/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B015/" title="前端笔记15"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端笔记15"/></a><div class="content"><a class="title" href="/2020/11/03/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B015/" title="前端笔记15">前端笔记15</a><time datetime="2020-11-03T03:06:54.419Z" title="发表于 2020-11-03 11:06:54">2020-11-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/02/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B014/" title="前端笔记14"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端笔记14"/></a><div class="content"><a class="title" href="/2020/11/02/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B014/" title="前端笔记14">前端笔记14</a><time datetime="2020-11-02T09:26:25.824Z" title="发表于 2020-11-02 17:26:25">2020-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/11/02/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="WebStorm快捷键"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="WebStorm快捷键"/></a><div class="content"><a class="title" href="/2020/11/02/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="WebStorm快捷键">WebStorm快捷键</a><time datetime="2020-11-02T07:14:13.718Z" title="发表于 2020-11-02 15:14:13">2020-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/29/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B013/" title="前端笔记13"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端笔记13"/></a><div class="content"><a class="title" href="/2020/10/29/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B013/" title="前端笔记13">前端笔记13</a><time datetime="2020-10-29T07:13:52.266Z" title="发表于 2020-10-29 15:13:52">2020-10-29</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By 汤同学</div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":220,"height":400},"mobile":{"show":false},"log":false});</script></body></html>
